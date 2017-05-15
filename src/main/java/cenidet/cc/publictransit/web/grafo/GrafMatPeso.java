@@ -17,7 +17,7 @@ public class GrafMatPeso {
 		}
 		numVerts = 0;			
 	}
-	
+		
 	public void nuevoVertice(Vertice vertice){
 		if((vertice != null) && ( ! existe(vertice))){
 			vertice.asigVert(numVerts);
