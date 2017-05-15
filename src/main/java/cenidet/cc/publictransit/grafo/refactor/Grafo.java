@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cenidet.cc.publictransit.dto.Stop;
+import cenidet.cc.publictransit.web.grafo.CaminoMinimo;
 
 public class Grafo {
 
@@ -13,11 +14,15 @@ public class Grafo {
 	private Stop[] vertices;
 	private int numeroVertices;
 	
+	private CaminoMinimo caminoMinimo;
+	
 	public Grafo(ArrayList<Stop> vertices) throws Exception{
 		setListaVertices(vertices);
 		initMatrizAdyacencia();
 		initArregloVertices();
 		this.numeroVertices = 0;
+		
+		caminoMinimo = new CaminoMinimo(this);
 	}
 	
 	public void setListaVertices(ArrayList<Stop> vertices) throws Exception {
@@ -27,7 +32,6 @@ public class Grafo {
 			this.listaVertices = vertices;
 		}		
 	}
-
 
 	public void setMatrizAdyacencia(double[][] matrizAdyacencia) {
 		this.matrizAdyacencia = matrizAdyacencia;
@@ -94,9 +98,28 @@ public class Grafo {
 		}
 	}
 	
-	public List<Stop> encontrarCamino(Stop origen, Stop destino){
-		
-		return new ArrayList<Stop>();
+	public int getNumeroDeVertices(){
+		return listaVertices.size();
+	}
+	
+	public double[][] getMatrizDeAdyacencia(){
+		return matrizAdyacencia;
+	}
+	
+	public ArrayList<Stop> getListaDeVertices(){
+		return listaVertices;
+	}
+	
+	public int getElementIndex(Stop parada){
+		return listaVertices.indexOf(parada);
+	}
+	
+	public Stop getElementAt(int indice){
+		return listaVertices.get(indice);
+	}
+	
+	public ArrayList<Stop> encontrarCamino(Stop origen, Stop destino){
+		return caminoMinimo.encontrarCamino(origen, destino);		
 	}
 	
 	

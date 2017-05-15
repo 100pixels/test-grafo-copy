@@ -15,7 +15,11 @@ public class MainExcel2 {
 		
 		Grafo grafo = new Grafo(verticesGrafo);		
 		grafo.imprimirMatriz();
-					
+		
+		Stop origen = grafo.getElementAt(3);
+		Stop destino= grafo.getElementAt(4);
+		ArrayList<Stop> caminoMinimo = grafo.encontrarCamino(origen, destino);
+		
 	}
 	
 

@@ -23,7 +23,7 @@ public class App {
 		// Arcos con origen en D
 		
 		CaminoMinimo camino = new CaminoMinimo(grafo, 0);
-		camino.caminoMinimos();
+		camino.encontrarCaminos();
 		camino.recuperaCamino(3);
 		
 	}
