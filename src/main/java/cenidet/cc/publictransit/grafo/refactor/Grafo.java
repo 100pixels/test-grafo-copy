@@ -2,6 +2,7 @@ package cenidet.cc.publictransit.grafo.refactor;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import cenidet.cc.publictransit.dto.Stop;
 import cenidet.cc.publictransit.web.grafo.CaminoMinimo;
@@ -98,6 +99,12 @@ public class Grafo {
 		}
 	}
 	
+	public void imprimirListaDeVertices(){
+		for (Stop parada: listaVertices) {
+			System.out.println(parada);
+		}
+	}
+	
 	public int getNumeroDeVertices(){
 		return listaVertices.size();
 	}
@@ -119,6 +126,9 @@ public class Grafo {
 	}
 	
 	public ArrayList<Stop> encontrarCamino(Stop origen, Stop destino){
+		String mensaje="El parámetro es una referencia nula";
+		Objects.requireNonNull(origen, mensaje);
+		Objects.requireNonNull(destino, mensaje);
 		return caminoMinimo.encontrarCamino(origen, destino);		
 	}
 	

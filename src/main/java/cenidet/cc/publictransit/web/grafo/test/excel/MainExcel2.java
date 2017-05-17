@@ -15,15 +15,14 @@ public class MainExcel2 {
 		
 		Grafo grafo = new Grafo(verticesGrafo);		
 		grafo.imprimirMatriz();
+		grafo.imprimirListaDeVertices();
 		
-		Stop origen = grafo.getElementAt(3);
-		Stop destino= grafo.getElementAt(4);
+		
+		Stop origen = grafo.getElementAt(0);
+		Stop destino= grafo.getElementAt(6);
+		@SuppressWarnings("unused")
 		ArrayList<Stop> caminoMinimo = grafo.encontrarCamino(origen, destino);
+		//*/
 		
-	}
-	
-
-	
-
-	
+	}		
 }
