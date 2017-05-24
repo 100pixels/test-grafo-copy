@@ -1,10 +1,11 @@
-package cenidet.cc.publictransit.web.grafo;
+package cenidet.cc.publictransit.grafo.refactor;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
-import cenidet.cc.publictransit.dto.Stop;
-import cenidet.cc.publictransit.grafo.refactor.Grafo;
+import org.cenidet.cc.publictransit.dto.Stop;
+
+import cenidet.cc.publictransit.web.grafo.GrafMatPeso;
 
 public class CaminoMinimo {
 	

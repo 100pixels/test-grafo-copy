@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import cenidet.cc.publictransit.dto.Stop;
-import cenidet.cc.publictransit.web.grafo.CaminoMinimo;
+import org.cenidet.cc.publictransit.dto.Stop;
 
 public class Grafo {
 
@@ -20,6 +19,7 @@ public class Grafo {
 	public Grafo(ArrayList<Stop> vertices) throws Exception{
 		setListaVertices(vertices);
 		initMatrizAdyacencia();
+		llenarMatrizAdyacencia();
 		initArregloVertices();
 		this.numeroVertices = 0;
 		

@@ -1,5 +1,7 @@
 package cenidet.cc.publictransit.web.grafo;
 
+import cenidet.cc.publictransit.grafo.refactor.CaminoMinimo;
+
 public class App {
 	
 	public static void main(String[] args) {	
